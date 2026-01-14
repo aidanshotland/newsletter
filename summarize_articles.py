@@ -32,10 +32,11 @@ Please create a concise, engaging newsletter with the following structure:
 4. **Security & Cloud** (if relevant)
 5. **Other Notable News** (remaining interesting articles)
 
-For each section:
-- Write a brief 2-3 sentence summary that synthesizes the key points
-- Include the article titles and links
-- Focus on what developers need to know and why it matters
+For each article in each section:
+- Write a 2-3 sentence summary explaining what happened and why it matters
+- Include the article title as a text (not a link)
+- Include the link on a separate line
+- Make the summary informative enough that I don't need to click through unless I want more details
 
 Skip any sections that don't have relevant articles. Keep the total newsletter to about 5 minutes of reading time.
 
