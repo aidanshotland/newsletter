@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from datetime import datetime
 
 # 1. SETUP PATHS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -108,8 +109,15 @@ if __name__ == "__main__":
         report = generate_newsletter(raw_data)
         print("\n" + "="*30 + "\nDAILY NEWSLETTER\n" + "="*30)
         print(report)
+
+        newsletters_dir = os.path.join(BASE_DIR, 'newsletters')
+
+        today = datetime.now().strftime('%B-%d-%Y') 
+        report_path = os.path.join(newsletters_dir, f"{today}.md")
         
-        with open(os.path.join(BASE_DIR, "report.md"), "w") as f:
+        with open(report_path, "w") as f:
             f.write(report)
+        
+        print(f"\n✅ Newsletter saved to: {report_path}")
     else:
         print("Nothing new to report!")
