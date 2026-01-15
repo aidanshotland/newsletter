@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 # 1. Absolute path to your database
-DB_PATH = "/Users/aidanshotland/Desktop/newsletter/news.db"
+DB_PATH = "/Users/aidanshotland/Desktop/newsletter/articles.db"
 
 def rebuild():
     # Delete the old file if it exists to clear the "no such table" errors
@@ -21,7 +21,6 @@ def rebuild():
             source TEXT,
             title TEXT,
             summary TEXT,
-            is_read INTEGER DEFAULT 0,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     ''')

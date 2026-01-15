@@ -17,7 +17,7 @@ RSS_FEEDS = {
 TLDR_CATS = ['tech', 'ai']
 
 def get_db_conn():
-    return sqlite3.connect('news.db')
+    return sqlite3.connect('articles.db')
 
 def save_articles(articles):
     conn = get_db_conn()
@@ -33,15 +33,39 @@ def save_articles(articles):
 def fetch_rss():
     print("🚀 Fetching RSS Feeds...")
     results = []
+    today = datetime.now().date()
+    
     for name, url in RSS_FEEDS.items():
         feed = feedparser.parse(url)
-        for entry in feed.entries:
-            results.append({
-                'title': entry.get('title', ''),
-                'link': entry.get('link', ''),
-                'source': name,
-                'summary': entry.get('summary', '')[:500]
-            })
+        
+        # GitHub Trending is a special case - it's already filtered to "today" by the feed itself
+        if 'github' in name.lower() and 'trending' in name.lower():
+            for entry in feed.entries:
+                results.append({
+                    'title': entry.get('title', ''),
+                    'link': entry.get('link', ''),
+                    'source': name,
+                    'summary': entry.get('summary', '')[:500]
+                })
+        else:
+            # For regular RSS feeds, filter by publish date
+            for entry in feed.entries:
+                pub_date = None
+                if hasattr(entry, 'published_parsed') and entry.published_parsed:
+                    pub_date = datetime(*entry.published_parsed[:6]).date()
+                elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
+                    pub_date = datetime(*entry.updated_parsed[:6]).date()
+                
+                # Only include if published today
+                if pub_date == today:
+                    results.append({
+                        'title': entry.get('title', ''),
+                        'link': entry.get('link', ''),
+                        'source': name,
+                        'summary': entry.get('summary', '')[:500]
+                    })
+    
+    print(f"✅ Found {len(results)} articles from today across all RSS feeds.")
     return results
 
 def fetch_tldr_today():
@@ -53,32 +77,59 @@ def fetch_tldr_today():
         url = f"https://tldr.tech/{cat}/{today_str}"
         print(f"📡 Hunting for TLDR {cat.upper()} at {url}...")
         
-        # Retry loop: Tries 5 times every 2 mins if page is 404
         success = False
         for attempt in range(5):
             res = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
             if res.status_code == 200:
                 soup = BeautifulSoup(res.text, 'html.parser')
-                # Targeted 2026 selector: find all story blocks
-                # TLDR usually wraps stories in divs with specific classes or nearby <a> tags
+                
+                # Find all story blocks (divs or articles)
                 items = soup.find_all(['div', 'article'])
+                seen_links = set()  # Avoid duplicates
+                
                 for item in items:
-                    link_tag = item.find('a', href=True)
-                    if link_tag and 'tldr.tech' not in link_tag['href'] and len(link_tag.text) > 10:
+                    # Find ALL links in this item
+                    links_in_item = item.find_all('a', href=True)
+                    
+                    # Find the BEST link (longest title text, external, not seen)
+                    best_link = None
+                    best_title = ""
+                    
+                    for link_tag in links_in_item:
+                        href = link_tag['href']
+                        title = link_tag.get_text(strip=True)
+                        
+                        # Must be external and not already captured
+                        if (href.startswith('http') and 
+                            'tldr.tech' not in href and 
+                            'unsubscribe' not in href.lower() and
+                            href not in seen_links and
+                            len(title) > len(best_title) and
+                            len(title) > 10):
+                            
+                            best_link = href
+                            best_title = title
+                    
+                    # If we found a good link, save it
+                    if best_link:
+                        seen_links.add(best_link)
                         results.append({
-                            'title': link_tag.get_text(strip=True),
-                            'link': link_tag['href'],
+                            'title': best_title,
+                            'link': best_link,
                             'source': f'TLDR_{cat.upper()}',
                             'summary': item.get_text(" ", strip=True)[:300]
                         })
-                print(f"✅ Captured {cat.upper()} issue.")
+                
+                print(f"✅ Captured {len([r for r in results if r['source'] == f'TLDR_{cat.upper()}'])} articles from {cat.upper()} issue.")
                 success = True
                 break
             elif res.status_code == 404:
                 print(f"⏳ {cat.upper()} not live yet. Retrying in 2 mins...")
                 time.sleep(120)
             else:
+                print(f"❌ Unexpected status {res.status_code} for {cat.upper()}")
                 break
+        
         if not success:
             print(f"❌ Failed to find TLDR {cat.upper()} for today.")
             

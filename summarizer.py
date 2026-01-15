@@ -6,7 +6,7 @@ from google.genai import types
 
 # 1. SETUP PATHS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "news.db")
+DB_PATH = os.path.join(BASE_DIR, "articles.db")
 ENV_PATH = os.path.join(BASE_DIR, ".env")
 load_dotenv(ENV_PATH)
 
@@ -45,7 +45,7 @@ def generate_newsletter(articles):
     unique_sources = len(set([a['source'] for a in articles]))
 
     context = "\n".join([
-        f"ID: {a['id']} | Freq: {a['frequency']} | Source: {a['source']} | Title: {a['title']}\nSummary: {a['summary']}\n---" 
+        f"ID: {a['id']} | Freq: {a['frequency']} | Source: {a['source']}\nTitle: {a['title']}\nLink: {a['link']}\nSummary: {a['summary']}\n---" 
         for a in articles
     ])
 
@@ -53,18 +53,20 @@ def generate_newsletter(articles):
     config = types.GenerateContentConfig(
         system_instruction="""You are a Technical Strategist and Lead Editor. Mission: Synthesize raw tech news into a high-density 5-minute briefing (600-900 words). 
 
-        PRIORITY MATRIX (Selection Criteria): 
-        1. 🚨 TOP TRENDS: Include if: Freq >= 2 OR it's a major release from 'Anchor' projects (Meta, OpenAI, Python, Rust, Linux, etc.) OR it's a critical 'Breaking' security vulnerability. 
-        2. 🤖 AI INNOVATION: Focus on autonomous agents, local-first LLM execution, inference speed breakthroughs, and agentic frameworks. 
-        3. 🛡️ DEV & SECURITY: Focus on tools solving developer pain points, performance benchmarks (Rust/Mojo), and research into new attack surfaces. 
-        4. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
+         PRIORITY MATRIX (Selection Criteria): 
+    1. 🚨 TOP TRENDS: Include if: Freq >= 2 OR it's a major release from 'Anchor' projects (Meta, OpenAI, Python, Rust, Linux, etc.) OR it's a critical 'Breaking' security vulnerability. 
+    2. 🤖 AI INNOVATION: Focus on autonomous agents, local-first LLM execution, inference speed breakthroughs, and agentic frameworks. 
+    3. 🛡️ DEV & SECURITY: Focus on tools solving developer pain points, performance benchmarks (Rust/Mojo), and research into new attack surfaces. 
+    4. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
 
-        OUTPUT CONSTRAINTS: 
-        - Exactly 12 items total. 
-        - 60-80 words per item (3 tight sentences). 
-        - Sentence 1: The Fact (What happened?). 
-        - Sentence 2: The Technical Detail (How does it work/Key spec?). 
-        - Sentence 3: The Actionable Insight (Why should a dev care today?). 
+    OUTPUT CONSTRAINTS: 
+    - Exactly 12 items total. 
+    - Each item must start with the article title as a ### heading (e.g., ### Article Title Here)
+    - 60-80 words per item (3 tight sentences). 
+    - Sentence 1: The Fact (What happened?). 
+    - Sentence 2: The Technical Detail (How does it work/Key spec?). 
+    - Sentence 3: The Actionable Insight (Why should a dev care today?).
+    - SOURCING: Every item MUST end with a Markdown link using the exact URL provided: [Read the source](URL).
 
         STRUCTURE: 
         ## 🚨 TOP TRENDS 
