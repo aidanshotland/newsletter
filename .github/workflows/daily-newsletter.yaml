@@ -1,0 +1,43 @@
+name: Daily Tech Newsletter
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate-newsletter:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip3 install feedparser beautifulsoup4 requests python-dotenv google-genai
+      
+      - name: Run fetcher
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python fetcher.py
+      
+      - name: Run summarizer
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python summarizer.py
+      
+      - name: Commit and push report
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add newsletters/ articles.db
+          git diff --quiet && git diff --staged --quiet || git commit -m "📰 Newsletter for $(date +'%B %d, %Y')"
+          git push
