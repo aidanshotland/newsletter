@@ -111,6 +111,7 @@ if __name__ == "__main__":
         print(report)
 
         newsletters_dir = os.path.join(BASE_DIR, 'newsletters')
+        os.makedirs(newsletters_dir, exist_ok=True)
 
         today = datetime.now().strftime('%B-%d-%Y') 
         report_path = os.path.join(newsletters_dir, f"{today}.md")
