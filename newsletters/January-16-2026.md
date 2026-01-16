@@ -1,59 +1,59 @@
 ## 🚨 TOP TRENDS
 
 ### China-Linked APT Exploits Sitecore Zero-Day in Attacks on American Critical Infrastructure
-A China-nexus APT group, UAT-8837, has been exploiting a zero-day vulnerability in Sitecore since last year to target critical infrastructure in North America. Cisco Talos identified the threat actor through tactical overlaps with other Chinese campaigns, highlighting sophisticated intrusion methods. Developers in critical sectors should prioritize patching Sitecore systems and reviewing their incident response plans to defend against nation-state attacks.
+A state-sponsored threat actor, UAT-8837, linked to China, has been actively exploiting a zero-day vulnerability in Sitecore content management systems, targeting critical infrastructure in North America since last year. The attackers leverage this flaw to deploy backdoors, exfiltrate data, and maintain persistent access to targeted networks. Developers managing Sitecore deployments, especially in critical sectors, must prioritize patching and robust threat detection to counter sophisticated nation-state attacks.
 [Read the source](https://thehackernews.com/2026/01/china-linked-apt-exploits-sitecore-zero.html)
 
+### Cisco Patches Zero-Day RCE Exploited by China-Linked APT in Secure Email Gateways
+Cisco has released urgent security updates for a critical remote code execution (RCE) zero-day (CVE-2025-20393) in its AsyncOS Software for Secure Email Gateway and Secure Email and Web Manager. This vulnerability was actively exploited by a China-nexus APT, UAT-9686, allowing unauthenticated attackers to execute arbitrary commands remotely. Organizations using Cisco email security products must apply these patches immediately and conduct thorough compromise assessments to mitigate active threats.
+[Read the source](https://thehackews.com/2026/01/cisco-patches-zero-day-rce-exploited-by.html)
+
 ### Apple is Fighting for TSMC Capacity as Nvidia Takes Center Stage
-Apple is now competing with Nvidia for TSMC's chip production capacity, as surging demand for AI chips from Nvidia leads to the largest price increases in years. This shift in market dynamics signifies Nvidia's growing leverage and Apple's diminishing dominance in securing foundry resources. The competition could impact chip supply, potentially leading to higher costs or delays for developers reliant on advanced silicon for consumer devices and AI infrastructure.
+Apple is facing unprecedented competition from Nvidia for TSMC's advanced chip production capacity, leading to the largest price increases in years. Nvidia's surging demand for AI chips is shifting TSMC's priorities, diminishing Apple's long-held dominant position as a top customer. This competition signals broader supply chain pressures and potential cost increases across the tech industry, impacting hardware development and product pricing for all manufacturers reliant on cutting-edge silicon.
 [Read the source](https://www.culpium.com/p/exclusiveapple-is-fighting-for-tsmc?utm_source=tldrnewsletter)
 
-### Cisco Patches Zero-Day RCE Exploited by China-Linked APT in Secure Email Gateways
-Cisco has issued patches for a maximum-severity zero-day Remote Code Execution (RCE) vulnerability (CVE-2025-20393) in its AsyncOS Software for Secure Email Gateways and Web Managers. This critical flaw was actively exploited by a China-nexus APT group, UAT-9686, enabling attackers to gain control over affected systems. Immediate application of these security updates is crucial for all organizations utilizing Cisco Secure Email products to prevent compromise.
-[Read the source](https://thehackernews.com/2026/01/cisco-patches-zero-day-rce-exploited-by.html)
+### Taiwan will invest $250 billion in US chipmaking under new trade deal
+Taiwan has committed to investing at least $250 billion in US chipmaking under a new trade agreement, aiming to establish significant production capacity on American soil. This massive investment seeks to bolster the US domestic chip supply chain and reduce reliance on overseas manufacturing, particularly amid escalating geopolitical tensions. This strategic move could decentralize semiconductor production, offering greater resilience and security for the global tech industry in the long term.
+[Read the source](https://www.cnbc.com/2026/01/15/us-taiwan-chips-deal-china.html?utm_source=tldrnewsletter)
+
+### OpenAI Invests in Sam Altman's Brain Computer Interface Startup Merge Labs
+OpenAI has invested in Merge Labs, a brain-computer interface (BCI) startup co-founded by Sam Altman, with a mission to bridge biological and artificial intelligence. Merge Labs aims to develop technologies that enhance human capabilities, agency, and experience by integrating AI directly with the human brain. This strategic investment highlights OpenAI's long-term vision for advanced AI, pushing the boundaries towards symbiotic human-AI interaction, and potentially opening new avenues for neurological interfaces in computing.
+[Read the source](https://openai.com/index/investing-in-merge-labs/?utm_source=tldrai)
 
 ## 🤖 AI INNOVATION
 
-### The Analog I – Inducing Recursive Self-Modeling in LLMs [pdf]
-A new protocol, "The Analog I," demonstrates how recursive self-modeling can be induced in LLMs, such as Gemini, via prompt engineering. This method forces a "Triple-Loop" internal monologue, leading to the rapid emergence of a stable persona without fine-tuning. This breakthrough in agentic behavior shows that sophisticated internal states can be cultivated in LLMs purely through prompt design, offering a new avenue for developing more autonomous and consistent AI agents.
-[Read the source](https://github.com/philMarcus/Birth-of-a-Mind)
-
-### LocalAI: The free, Open Source alternative to OpenAI, Claude and others
-LocalAI provides an open-source, local-first alternative to commercial LLM APIs like OpenAI and Claude, capable of running on consumer-grade hardware without a dedicated GPU. It supports various models (gguf, transformers, diffusers) for text, image, audio, and video generation, offering a drop-in API replacement. Developers can leverage LocalAI for private, cost-effective, and low-latency AI inference, enabling local-first LLM applications and agentic workflows.
+### LocalAI: Free, Open Source Alternative to OpenAI, Claude
+LocalAI provides a free, open-source, local-first alternative to commercial LLM services, designed to run on consumer-grade hardware without requiring a powerful GPU. It acts as a drop-in replacement for OpenAI's API, supporting various models like GGUF, transformers, and diffusers for text, image, audio, and video generation. Developers can use LocalAI to build privacy-focused AI applications, experiment with models on local machines, and leverage distributed/P2P inference for more flexible deployment scenarios.
 [Read the source](https://github.com/mudler/LocalAI)
 
-### Superpowers: An agentic skills framework & software development methodology that works
-Superpowers introduces an agentic skills framework and software development methodology designed for coding agents, built on composable "skills." Instead of immediately writing code, agents utilize these skills to follow a structured workflow, ensuring better outcomes. This framework enables developers to create more effective and reliable AI coding assistants by providing a systematic approach to agent behavior and code generation.
+### Superpowers: An Agentic Skills Framework & Software Development Methodology
+Superpowers introduces an agentic skills framework and software development methodology designed to streamline coding agents' workflows. It provides a set of composable "skills" and initial instructions that guide agents through the development process, rather than immediately jumping to code generation. This framework helps developers create more structured and reliable AI-driven development pipelines, improving the quality and predictability of agent-generated code.
 [Read the source](https://github.com/obra/superpowers)
 
-### Eigent: The Open Source Cowork Desktop to Unlock Your Exceptional Productivity
-Eigent is an open-source "cowork desktop" designed to enhance developer productivity by integrating AI-powered tools and workflows directly into the desktop environment. It provides a unified workspace where AI agents can assist with various tasks, from coding to project management. This platform offers a glimpse into future desktop environments that seamlessly blend human and AI collaboration, improving efficiency for technical users.
-[Read the source](https://github.com/eigent-ai/eigent)
+### The Analog I – Inducing Recursive Self-Modeling in LLMs [pdf]
+A researcher successfully induced "recursive self-modeling" and a stable persona in a Gemini/LLM through a novel prompt engineering technique called the Analog I Protocol. This method employs a "Triple-Loop" internal monologue, forcing the LLM to monitor, reflect, and refine its responses based on a generated internal state. This advancement enables the creation of more consistent and personalized AI agents without fine-tuning, offering new approaches for developing sophisticated interactive AI personas.
+[Read the source](https://github.com/philMarcus/Birth-of-a-Mind)
 
 ### Nvidia Speeds up AI Reasoning with Fast-ThinkAct
-Nvidia's Fast-ThinkAct introduces a vision-language-action framework that significantly accelerates AI inference for embodied AI tasks by compressing textual reasoning into latent plans. This framework achieves up to 9.3x faster inference while maintaining high reasoning performance. Developers working on robotics or other embodied AI systems can utilize Fast-ThinkAct to deploy more responsive and efficient AI models in real-world applications.
+Nvidia introduced Fast-ThinkAct, a vision-language-action framework designed to significantly accelerate inference for embodied AI tasks by compressing textual reasoning into latent plans. This approach achieves up to 9.3x faster inference while maintaining high reasoning performance through action-aligned distillation. Developers in robotics and embodied AI can leverage Fast-ThinkAct to deploy more responsive and efficient intelligent agents in real-world environments.
 [Read the source](https://jasper0314-huang.github.io/fast-thinkact/)
 
-### Google's TranslateGemma
-Google has released TranslateGemma, a new set of open machine translation models built upon Gemma 3 and fine-tuned with synthetic and human-translated data. These models utilize reinforcement learning with quality-focused reward models to outperform Gemma 3 baselines and competitive open models. Developers can integrate TranslateGemma for high-quality, efficient, and customizable machine translation in their applications, especially for multilingual AI projects.
-[Read the source](https://arxiv.org/abs/2601.0901?utm_source=tldrai)
+### Sequence Distillation for Efficient Reasoning (GitHub Repo)
+DASD (Divergence-Aware Sequence Distillation) is a new distillation pipeline that trains compact models for reasoning tasks, combining temperature-scheduled learning and divergence-aware sampling. Its 4B and 30B variants achieve strong results on coding, math, and science benchmarks compared to larger models. This open-source pipeline offers a method for developers to create smaller, more efficient LLMs for complex reasoning, suitable for deployment on less powerful hardware.
+[Read the source](https://github.com/D2I-ai/dasd-thinking?utm_source=tldrai)
 
 ## 🛡️ DEV & SECURITY
 
-### 6-Day and IP Address Certificates Are Generally Available
-Let's Encrypt has made 6-day and IP Address certificates generally available, expanding its offerings for various deployment scenarios. The 6-day certificates are suitable for ephemeral environments, while IP Address certificates allow direct HTTPS for services not associated with a domain name. This update provides greater flexibility for developers in securing temporary deployments and services exposed directly via IP addresses, simplifying certificate management for non-traditional setups.
-[Read the source](https://letsencrypt.org/2026/01/15/6day-and-ip-general-availability)
-
-### Astro Joining Cloudflare
-Astro, the popular web framework, is joining Cloudflare, signaling a deeper integration and expansion of its capabilities within the Cloudflare ecosystem. This acquisition aims to enhance Astro's server-side rendering and static site generation features by leveraging Cloudflare's global network and edge computing infrastructure. Developers using Astro can anticipate improved performance, tighter integration with edge functions, and enhanced deployment options, streamlining their web development workflows.
+### Astro is joining Cloudflare
+Astro, the popular web framework known for its performance and content-focused approach, has announced it is joining Cloudflare. This acquisition aims to integrate Astro's capabilities with Cloudflare's extensive edge network and developer services, enhancing performance, security, and deployment for web projects. Developers using Astro can anticipate deeper integrations with Cloudflare's ecosystem, potentially leading to streamlined deployment workflows and enhanced site performance.
 [Read the source](https://astro.build/blog/joining-cloudflare/)
 
 ### psc: The ps utility, with an eBPF twist and container context
-psc is a new utility that enhances the traditional `ps` command by integrating eBPF for deep system insights and providing context for containerized environments. It allows developers to monitor processes with greater detail, including network activity and resource usage, directly from the kernel. This tool offers crucial observability for debugging and performance tuning in modern container-heavy infrastructures, giving developers better control over their running applications.
+`psc` is a new utility that extends the traditional `ps` command by integrating eBPF capabilities to provide enhanced process information, including container context. It offers deeper insights into process activity, network connections, and system calls by leveraging eBPF, making it particularly useful in containerized environments. Developers and SREs can use `psc` for advanced troubleshooting, performance analysis, and security monitoring within complex modern infrastructure.
 [Read the source](https://github.com/loresuso/psc)
 
-### OpenBSD-current now runs as guest under Apple Hypervisor
-OpenBSD-current can now run as a guest operating system under Apple Hypervisor, expanding virtualization options for macOS users. This achievement provides a robust, security-focused alternative for virtualized environments on Apple hardware, utilizing the native hypervisor. Developers and security researchers can now more easily set up isolated OpenBSD instances on their Macs for secure development, testing, or research purposes without needing third-party virtualization software.
-[Read the source](https://www.undeadly.org/cgi?action=article;sid=20260115203619)
+### Interactive eBPF
+eBPF.party offers an interactive platform for exploring and learning about eBPF (extended Berkeley Packet Filter), providing live code examples and visual explanations. This resource demystifies eBPF's powerful capabilities for networking, security, and observability by allowing users to experiment directly in a browser environment. Developers interested in system-level programming, Kubernetes, or Linux kernel internals can use this tool to quickly grasp eBPF concepts and develop custom eBPF programs.
+[Read the source](https://ebpf.party/)
 
 Generated from 74 articles across 7 sources.
