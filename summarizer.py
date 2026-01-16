@@ -38,19 +38,6 @@ def get_articles():
     conn.close()
     return rows
 
-def cleanup_articles():
-    """Delete all articles after newsletter is generated"""
-    if not os.path.exists(DB_PATH):
-        return
-    
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM articles")
-    deleted_count = cursor.rowcount
-    conn.commit()
-    conn.close()
-    print(f"🧹 Cleaned up {deleted_count} articles from database")
-
 def generate_newsletter(articles):
     if not articles:
         return "No new articles found."
@@ -65,7 +52,7 @@ def generate_newsletter(articles):
 
     # Reverting to your preferred high-density editor instruction
     config = types.GenerateContentConfig(
-        system_instruction="""You are a Technical Strategist and Lead Editor. Mission: Synthesize raw tech news into a high-density 5-minute briefing. 
+        system_instruction="""You are a Technical Strategist and Lead Editor. Mission: Synthesize raw tech news into a high-density 5-minute briefing (600-900 words). 
 
          PRIORITY MATRIX (Selection Criteria): 
     1. 🚨 TOP TRENDS: Include if: Freq >= 2 OR it's a major release from 'Anchor' projects (Meta, OpenAI, Python, Rust, Linux, etc.) OR it's a critical 'Breaking' security vulnerability. 
@@ -74,9 +61,9 @@ def generate_newsletter(articles):
     4. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
 
     OUTPUT CONSTRAINTS: 
-    - 11-13 items MAXIMUM. 
+    - 11-13 items total. 
     - Each item must start with the article title as a ### heading (e.g., ### Article Title Here)
-    - 3 sentences per item. 
+    - 60-80 words per item (3 tight sentences). 
     - Sentence 1: The Fact (What happened?). 
     - Sentence 2: The Technical Detail (How does it work/Key spec?). 
     - Sentence 3: The Actionable Insight (Why should a dev care today?).
@@ -133,6 +120,5 @@ if __name__ == "__main__":
             f.write(report)
         
         print(f"\n✅ Newsletter saved to: {report_path}")
-        cleanup_articles()
     else:
         print("Nothing new to report!")
