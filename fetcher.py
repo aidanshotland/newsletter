@@ -7,7 +7,7 @@ import time
 
 # --- CONFIGURATION ---
 RSS_FEEDS = {
-    'InfoQ (Dev News)': 'https://feed.infoq.com/',
+    'InfoQ': 'https://feed.infoq.com/',
     'Hacker News': 'https://hnrss.org/frontpage?points=100',
     'GitHub Trending': 'https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml',
     'Ars Technica': 'https://feeds.arstechnica.com/arstechnica/index', 
