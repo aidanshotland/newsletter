@@ -80,7 +80,7 @@ def generate_newsletter(articles):
     - Sentence 1: The Fact (What happened?). 
     - Sentence 2: The Technical Detail (How does it work/Key spec?). 
     - Sentence 3: The Actionable Insight (Why should a dev care today?).
-    - SOURCING: Every item MUST end with a Markdown link showing the source of the article. The SourceName must be the name of the newsletter or feed provided in the RSS_FEEDS: [Source: SourceName](URL)
+    - SOURCING: Every item MUST end with a Markdown link showing the source of the article. The SourceName must be the source column in db: [Source: SourceName](URL)
 
         STRUCTURE: 
         ## 🚨 TOP TRENDS 
