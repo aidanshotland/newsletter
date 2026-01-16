@@ -38,6 +38,19 @@ def get_articles():
     conn.close()
     return rows
 
+def cleanup_articles():
+    """Delete all articles after newsletter is generated"""
+    if not os.path.exists(DB_PATH):
+        return
+    
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM articles")
+    deleted_count = cursor.rowcount
+    conn.commit()
+    conn.close()
+    print(f"🧹 Cleaned up {deleted_count} articles from database")
+
 def generate_newsletter(articles):
     if not articles:
         return "No new articles found."
@@ -120,5 +133,6 @@ if __name__ == "__main__":
             f.write(report)
         
         print(f"\n✅ Newsletter saved to: {report_path}")
+        cleanup_articles()
     else:
         print("Nothing new to report!")
