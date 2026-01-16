@@ -74,12 +74,12 @@ def generate_newsletter(articles):
     4. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
 
     OUTPUT CONSTRAINTS: 
-    - 11-13 items total. 
+    - 11-13 items MAXIMUM. 
     - Each item must start with the article title as a ### heading (e.g., ### Article Title Here)
-    - 3-4 sentences per item. 
+    - 3 sentences per item. 
     - Sentence 1: The Fact (What happened?). 
-    - Sentence 2-3: The Technical Detail (How does it work/Key spec?). 
-    - Sentence 3-4: The Actionable Insight (Why should a dev care today?).
+    - Sentence 2: The Technical Detail (How does it work/Key spec?). 
+    - Sentence 3: The Actionable Insight (Why should a dev care today?).
     - SOURCING: Every item MUST end with a Markdown link using the exact URL provided: [Read the source](URL).
 
         STRUCTURE: 
