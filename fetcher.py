@@ -7,14 +7,14 @@ import time
 
 # --- CONFIGURATION ---
 RSS_FEEDS = {
-    'TechCrunch': 'https://techcrunch.com/feed/',
-    'Hacker News': 'https://hnrss.org/frontpage',
-    'Ars Technica': 'https://feeds.arstechnica.com/arstechnica/index',
+    'InfoQ (Dev News)': 'https://feed.infoq.com/',
+    'Hacker News': 'https://hnrss.org/frontpage?points=100',
+    'Big Tech Digest': 'https://bigtechdigest.substack.com/feed',
     'GitHub Trending': 'https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml',
-    'The Hacker News': 'https://feeds.feedburner.com/TheHackersNews',
+    'Latent Space': 'https://www.latent.space/feed'
 }
 
-TLDR_CATS = ['tech', 'ai']
+TLDR_CATS = ['tech', 'ai', 'infosec']
 
 def get_db_conn():
     return sqlite3.connect('articles.db')
