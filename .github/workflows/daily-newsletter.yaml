@@ -2,8 +2,13 @@ name: Daily Tech Newsletter
 
 on:
   schedule:
-    - cron: '0 15 * * *'
+    - cron: '0 15 * * *'  # 7am PST / 8am PDT
   workflow_dispatch:
+
+env:
+  TZ: America/Los_Angeles
+
+
 
 jobs:
   generate-newsletter:
