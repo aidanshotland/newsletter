@@ -9,9 +9,12 @@ import time
 RSS_FEEDS = {
     'InfoQ (Dev News)': 'https://feed.infoq.com/',
     'Hacker News': 'https://hnrss.org/frontpage?points=100',
-    'Big Tech Digest': 'https://bigtechdigest.substack.com/feed',
     'GitHub Trending': 'https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml',
-    'Latent Space': 'https://www.latent.space/feed'
+    'Ars Technica': 'https://feeds.arstechnica.com/arstechnica/index', 
+    'Pragmatic Engineer': 'https://newsletter.pragmaticengineer.com/feed',
+    'TechCrunch': 'https://techcrunch.com/feed/',
+    
+
 }
 
 TLDR_CATS = ['tech', 'ai', 'infosec']
