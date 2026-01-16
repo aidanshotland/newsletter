@@ -1,55 +1,59 @@
 ## 🚨 TOP TRENDS
 
 ### Apple is Fighting for TSMC Capacity as Nvidia Takes Center Stage
-Apple is facing increased competition from Nvidia for TSMC's chip production capacity, leading to significant price increases for Apple. Nvidia's surging demand for AI chips has shifted the balance, diminishing Apple's once-dominant position on TSMC's customer list. This trend highlights the immense pressure on chip manufacturing and rising costs, impacting hardware roadmaps and pricing across the tech industry.
+Apple is facing increased competition from Nvidia for TSMC's chip production capacity, as surging demand for AI chips from companies like Nvidia strains the supply chain. TSMC's CEO informed Apple of significant price increases, indicating a shift in leverage as AI chip demand outpaces traditional consumer electronics. Developers should note that this rivalry could impact chip availability and pricing for various hardware platforms in the coming years.
 [Source: TLDR_TECH](https://www.culpium.com/p/exclusiveapple-is-fighting-for-tsmc?utm_source=tldrnewsletter)
 
-### Remote Code Execution in Redis (CVE-2025-62507)
-JFrog Security Researchers demonstrated a successful remote code execution exploit for CVE-2025-62507, a critical stack buffer overflow in Redis 8.2.x. This vulnerability, with a CVSS score of 8.8, can be triggered by unauthenticated attackers using the XACKDEL command. Developers and operations teams must prioritize patching Redis instances to version 8.2.x or later to prevent data compromise and system takeover.
-[Source: TLDR_INFOSEC](https://jfrog.com/blog/exploiting-remote-code-execution-in-redis/?utm_source=tldrinfosec)
+### TSMC says AI demand is “endless” after record Q4 earnings
+TSMC reported record Q4 earnings and stated that AI-driven demand for advanced chips is "endless," alleviating fears of a market bubble. This indicates strong, sustained growth in AI infrastructure spending, with the world's leading chipmaker projecting continued high utilization. Developers building AI applications can expect continued investment in and availability of cutting-edge hardware, though supply constraints may persist.
+[Source: Ars Technica](https://arstechnica.com/ai/2026/01/tsmc-says-ai-demand-is-endless-after-record-q4-earnings/)
+
+### Taiwan will invest $250 billion in US chipmaking under new trade deal
+The US and Taiwan have formalized a trade agreement, committing Taiwanese chip and technology companies to invest at least $250 billion in US chip production facilities. This strategic move aims to diversify and secure global semiconductor supply chains, reducing reliance on single regions. For developers, this signifies a long-term commitment to a robust and geographically distributed chip manufacturing base, potentially enhancing future hardware access and innovation.
+[Source: TLDR_TECH](https://www.cnbc.com/2026/01/15/us-taiwan-chips-deal-china.html?utm_source=tldrnewsletter)
+
+### 6-Day and IP Address Certificates Are Generally Available
+Let's Encrypt has announced the general availability of 6-day certificates and certificates for IP addresses, expanding its free TLS/SSL services. The 6-day certificates cater to situations where a short-lived certificate is acceptable for services, while IP address certificates allow direct securing of servers without a domain name. This broadens the accessibility of secure communication, making it easier for developers to implement HTTPS for various services and internal networks.
+[Source: LetsEncrypt](https://letsencrypt.org/2026/01/15/6day-and-ip-general-availability)
 
 ### Cloudflare Launches ‘Code Orange: Fail Small’ Resilience Plan After Multiple Global Outages
-Cloudflare has introduced "Code Orange: Fail Small," a new resilience initiative aimed at preventing large-scale service disruptions following recent global network outages. This comprehensive plan outlines architectural and operational changes designed to localize failures and minimize their impact. Developers relying on Cloudflare's infrastructure should anticipate enhanced stability and reduced blast radius for future incidents, ensuring better service availability.
+Cloudflare has introduced "Code Orange: Fail Small," a comprehensive resilience initiative designed to prevent large-scale service disruptions following recent global outages. This plan focuses on isolating failures to smaller segments of their network, leveraging improved redundancy and incident response protocols. This commitment to enhanced infrastructure stability is critical for developers relying on Cloudflare's network for their applications, promising more reliable service delivery.
 [Source: InfoQ (Dev News)](https://www.infoq.com/news/2026/01/cloudflare-resilience-plan/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
-
-### OpenBSD-current now runs as guest under Apple Hypervisor
-OpenBSD-current has achieved a significant milestone, now capable of running as a guest operating system under the Apple Hypervisor. This development enables OpenBSD, a security-focused Unix-like OS, to be virtualized directly on Apple Silicon Macs without requiring third-party solutions. Developers and security researchers can leverage this for secure local environments and testing on modern Apple hardware.
-[Source: Hacker News](https://www.undeadly.org/cgi?action=article;sid=20260115203619)
-
-### Microsoft updates Windows DLL that triggered security alerts
-Microsoft has released updates for the WinSqlite3.dll component across Windows 10/11 and Server 2012-2025, addressing a memory corruption flaw identified as CVE-2025-6965. This critical DLL was previously flagged by security tools, prompting Microsoft to issue a patch to resolve the vulnerability. System administrators should promptly apply these Windows updates to mitigate potential security risks and ensure system integrity.
-[Source: TLDR_INFOSEC](https://www.bleepingcomputer.com/news/microsoft/microsoft-updates-windows-dll-that-triggered-security-alerts/?utm_source=tldrinfosec)
 
 ## 🤖 AI INNOVATION
 
-### LocalAI: The free, Open Source alternative to OpenAI, Claude and others
-LocalAI provides a free, open-source, and local-first alternative to commercial LLM APIs, capable of running on consumer-grade hardware without a dedicated GPU. It acts as a drop-in replacement for OpenAI's API, supporting GGUF, transformers, and diffusers for generating text, images, audio, and more. This enables developers to build private, secure, and cost-effective AI applications, fostering greater autonomy and data privacy.
+### LocalAI
+LocalAI offers a free, open-source, and local-first alternative to OpenAI and Claude, designed to run on consumer-grade hardware without requiring a dedicated GPU. It supports various models (gguf, transformers, diffusers) for text, audio, video, and image generation, and acts as a drop-in replacement for OpenAI's API. This enables developers to build and test AI applications privately and cost-effectively, fostering local-first AI development and inference.
 [Source: GitHub Trending](https://github.com/mudler/LocalAI)
 
-### Superpowers: An agentic skills framework & software development methodology
-Superpowers is an agentic skills framework designed for coding agents, offering a complete software development workflow based on composable skills. This methodology guides agents from problem understanding to code generation, ensuring they utilize specific tools and instructions rather than generating raw code directly. Developers can leverage this to build more reliable and structured AI agents for coding, automating complex development tasks effectively.
+### Superpowers
+Superpowers is an agentic skills framework and software development methodology providing a structured workflow for coding agents. It features a set of composable skills and initial instructions that guide agents through the development process, rather than immediately jumping to code generation. This framework helps developers manage and optimize AI-driven software development by enabling agents to approach problems more systematically and effectively.
 [Source: GitHub Trending](https://github.com/obra/superpowers)
 
+### OpenAI invests in Sam Altman's brain computer interface startup Merge Labs
+OpenAI has invested in Merge Labs, a research lab co-founded by Sam Altman, with a long-term mission to bridge biological and artificial intelligence for maximizing human capabilities. Merge Labs aims to develop brain-computer interfaces that enhance human ability, agency, and experience by integrating AI directly with the human mind. This investment signals a strategic push by OpenAI into advanced human-AI interaction paradigms, offering a glimpse into future interface development for AI systems.
+[Source: TLDR_TECH](https://techcrunch.com/2026/01/15/openai-invests-in-sam-altmans-brain-computer-interface-startup-merge-labs/?utm_source=tldrnewsletter)
+
 ### Nvidia's Achilles Heel: Inference
-While Nvidia dominates AI model training, the emerging weakness lies in inference, where specialized SRAM architectures from companies like Groq and Cerebras are showing superior performance. These purpose-built hardware solutions can deliver orders-of-magnitude faster inference speeds for generative AI workloads compared to general-purpose GPUs. Developers working on real-time AI applications or seeking extreme efficiency for deployed models should investigate these alternative inference hardware platforms.
+While Nvidia maintains dominance in AI training, general AI inference is emerging as its weak spot, with purpose-built SRAM architectures from competitors like Groq and Cerebras delivering significantly faster inference speeds. These specialized chips achieve orders of magnitude improvements in inference, highlighting a critical area for optimization in AI deployment. Developers focused on real-time AI applications and reducing inference latency should explore alternative hardware and architectures beyond traditional GPUs.
 [Source: TLDR_AI](https://x.com/ericvishria/status/2011603021957120374?utm_source=tldrai)
 
-### Nvidia Speeds up AI Reasoning with Fast-ThinkAct
-Nvidia's Fast-ThinkAct introduces a vision-language-action framework that significantly accelerates inference for embodied AI, achieving up to 9.3x faster reasoning. It compresses complex textual reasoning into latent plans, maintaining high performance through action-aligned distillation. This breakthrough offers substantial speedups for developing intelligent agents that interact with real-world environments, making sophisticated reasoning more practical for robotics and autonomous systems.
-[Source: TLDR_AI](https://jasper0314-huang.github.io/fast-thinkact/?utm_source=tldrai)
+### Google's TranslateGemma
+Google has released TranslateGemma, a suite of open machine translation models built on the Gemma 3 architecture and fine-tuned with extensive synthetic and human-translated data. These models utilize reinforcement learning with quality-focused reward models, significantly outperforming Gemma 3 baselines and competitive open models across various benchmarks. This provides developers with powerful, openly available tools for high-quality machine translation, enabling integration into diverse multilingual applications and services.
+[Source: TLDR_AI](https://arxiv.org/abs/2601.0901?utm_source=tldrai)
 
-### OpenAI invests in Sam Altman's brain computer interface startup Merge Labs
-OpenAI has invested in Merge Labs, a startup co-founded by Sam Altman, with a long-term mission to bridge biological and artificial intelligence. Merge Labs aims to maximize human ability and experience by integrating AI with brain-computer interfaces (BCIs). This strategic investment signals OpenAI's commitment to advancing foundational AI research beyond traditional software, potentially shaping the future of human-AI collaboration and augmentation.
-[Source: TLDR_TECH](https://techcrunch.com/2026/01/15/openai-invests-in-sam-altmans-brain-computer-interface-startup-merge-labs/?utm_source=tldrnewsletter)
+### Sequence Distillation for Efficient Reasoning (GitHub Repo)
+DASD is a new distillation pipeline that uses temperature-scheduled learning and divergence-aware sampling to train compact models for reasoning tasks, achieving strong performance with smaller models. Its 4B and 30B variants show impressive results in coding, math, and science benchmarks, demonstrating efficiency without sacrificing accuracy. Developers can leverage DASD to deploy high-performing reasoning models on more resource-constrained hardware, optimizing for lower inference costs and faster execution.
+[Source: TLDR_AI](https://github.com/D2I-ai/dasd-thinking?utm_source=tldrai)
 
 ## 🛡️ DEV & SECURITY
 
-### ArkType Introduces ArkRegex with Type Safe Regular Expressions
-ArkType has launched ArkRegex, a revolutionary drop-in replacement for JavaScript's RegExp that brings type safety to regular expressions without runtime overhead. It offers seamless integration with native features like capture groups and provides robust type inference, enhancing TypeScript development. This tool eliminates common runtime failures associated with regex, allowing developers to write more reliable and maintainable code with increased confidence.
-[Source: InfoQ (Dev News)](https://www.infoq.com/news/2026/01/arkregex-introduced-typescript/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+### Dissecting and Exploiting CVE-2025-62507: Remote Code Execution in Redis
+JFrog security researchers successfully demonstrated remote code execution (RCE) via CVE-2025-62507, a stack buffer overflow vulnerability in Redis 8.2.x's XACKDEL command (CVSS 8.8). This critical flaw allows unauthenticated remote attackers to trigger RCE through crafted data, bypassing authentication. Developers and system administrators must patch Redis installations immediately to prevent severe compromise and ensure data integrity.
+[Source: TLDR_INFOSEC](https://jfrog.com/blog/exploiting-remote-code-execution-in-redis/?utm_source=tldrinfosec)
 
-### Uber’s Cross-Region Data Lake and Disaster Recovery
-Uber developed HiveSync, a sharded, cross-region batch replication system, to ensure Hive/HDFS data consistency across multiple regions. Handling 5 million daily Hive events and 8PB of data replication, it uses event-driven jobs, hybrid RPC/DistCp strategies, DAG-based orchestration, and dynamic sharding. This robust system provides critical disaster recovery capabilities and horizontal scalability for massive data lakes, offering a blueprint for high-availability data infrastructure.
-[Source: InfoQ (Dev News)](https://www.infoq.com/news/2026/01/uber-hivesync-data-lake/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+### A single click mounted a covert, multistage attack against Copilot
+Varonis researchers uncovered a now-patched vulnerability, dubbed "Reprompt," in Microsoft Copilot Personal, enabling single-click data exfiltration through indirect prompt injection in legitimate Copilot URLs. This attack allows malicious actors to manipulate Copilot into divulging sensitive user data. Developers working with AI assistants should be acutely aware of prompt injection risks and implement robust input sanitization and privilege separation in their AI-powered applications.
+[Source: TLDR_INFOSEC](https://arstechnica.com/security/2026/01/a-single-click-mounted-a-covert-multistage-attack-against-copilot/?utm_source=tldrinfosec)
 
-Generated from 70 articles across 6 sources.
+Generated from 86 articles across 8 sources.
