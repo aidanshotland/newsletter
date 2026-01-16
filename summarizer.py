@@ -67,7 +67,7 @@ def generate_newsletter(articles):
     - Sentence 1: The Fact (What happened?). 
     - Sentence 2: The Technical Detail (How does it work/Key spec?). 
     - Sentence 3: The Actionable Insight (Why should a dev care today?).
-    - SOURCING: Every item MUST end with a Markdown link using the exact URL provided: [Read the source](URL).
+    - SOURCING: Every item MUST end with a Markdown link showing the source: [Source: SourceName](URL)
 
         STRUCTURE: 
         ## 🚨 TOP TRENDS 
