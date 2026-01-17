@@ -17,7 +17,7 @@ RSS_FEEDS = {
 
 }
 
-TLDR_CATS = ['tech', 'ai', 'infosec']
+TLDR_CATS = ['tech', 'ai']
 
 def get_db_conn():
     return sqlite3.connect('articles.db')
@@ -73,7 +73,14 @@ def fetch_rss():
 
 def fetch_tldr_today():
     """Scrapes today's TLDR issues with a retry loop if not yet published."""
-    today_str = datetime.now().strftime('%Y-%m-%d')
+    today = datetime.now()
+    
+    # TLDR only publishes Mon-Fri, skip weekends
+    if today.weekday() >= 5:  # 5=Saturday, 6=Sunday
+        print("📅 TLDR doesn't publish on weekends. Skipping TLDR fetch.")
+        return []
+    
+    today_str = today.strftime('%Y-%m-%d')
     results = []
     
     for cat in TLDR_CATS:

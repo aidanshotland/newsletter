@@ -1,55 +1,59 @@
 ## 🚨 TOP TRENDS
 
-### Jony Ive and Sam Altman's First AI Gadget May Try to Kill AirPods
-Jony Ive's LoveFrom and Sam Altman's OpenAI are reportedly developing an AI-powered hardware device aimed at disrupting the personal audio market, potentially challenging Apple's AirPods. The collaboration focuses on creating a gadget with advanced AI capabilities for voice interaction and ambient intelligence, diverging from traditional smartphone interfaces. Developers should anticipate new form factors and interaction paradigms that prioritize voice and AI-driven assistance, influencing future app and hardware integration strategies.
-[Source: TLDR_TECH](https://gizmodo.com/jony-ive-and-sam-altmans-first-ai-gadget-may-try-to-kill-airpods-2000709609?utm_source=tldrnewsletter)
-
-### Gemini introduces Personal Intelligence
-Google's Gemini is enhancing its capabilities with "Personal Intelligence," designed to integrate and process a user's private data from various Google apps like Gmail and Docs. This feature aims to provide highly personalized responses and task automation by understanding individual context, operating locally on user devices for privacy. The move signals a shift towards more deeply integrated and privacy-aware AI, prompting developers to consider how their applications can securely leverage personal data for enhanced user experiences.
-[Source: TLDR_TECH](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/?utm_source=tldrai)
-
-### Apple picks Google's Gemini to run AI-powered Siri coming this year
-Apple is reportedly integrating Google's Gemini into Siri, signaling a significant shift in its AI strategy for upcoming products. This partnership will offload complex AI processing to Google's advanced LLMs, allowing Siri to handle more sophisticated queries and tasks beyond basic commands. Developers should prepare for a more capable Siri, potentially offering new integration points for apps via advanced voice commands and deeper contextual understanding, making AI-driven features more accessible on Apple platforms.
-[Source: TLDR_TECH](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html?utm_source=tldrnewsletter)
-
-### Anthropic invests $1.5 million in the Python Software Foundation and open source security
-Anthropic has committed $1.5 million to the Python Software Foundation (PSF) and open-source security initiatives, emphasizing the critical role of Python in AI/ML development. This investment directly supports the maintenance and security of Python's ecosystem, including its core infrastructure and key libraries. This significant funding underscores Python's continued importance in the AI landscape, encouraging developers to further invest in Python skills and contribute to its robust open-source community.
-[Source: TLDR_TECH](https://pyfound.blogspot.com/2025/12/anthropic-invests-in-python.html?utm_source=tldrdevops)
+### PCs refuse to shut down after Microsoft patch
+A recent Microsoft Patch Tuesday update is causing Windows PCs to fail to shut down properly, impacting system stability for users. The issue appears linked to Secure Launch and Intel Boot Guard functionality, preventing normal system power-off sequences. Developers and IT administrators should defer this specific patch and monitor official advisories to prevent operational disruptions and maintain endpoint stability.
+[Source: Hacker News](https://www.theregister.com/2026/01/16/patch_tuesday_secure_launch_bug_no_shutdown/)
 
 ## 🤖 AI INNOVATION
 
-### Eigent: The Open Source Cowork Desktop to Unlock Your Exceptional Productivity
-Eigent is an open-source "Cowork Desktop" project leveraging AI to enhance developer productivity by acting as an intelligent coding assistant. It integrates various AI agents and tools into a cohesive desktop environment, streamlining workflows from planning to code generation and debugging. Developers can explore Eigent as a platform for experimenting with agentic workflows and integrating custom AI tools to accelerate their software development cycles.
+### eigent-ai/eigent
+Eigent is introduced as an open-source "Cowork Desktop" designed to boost developer productivity through AI assistance. This platform aims to integrate AI capabilities directly into the development workflow, acting as an intelligent assistant. Developers should explore Eigent for its potential to streamline coding tasks and enhance collaboration within AI-driven software development environments.
 [Source: GitHub Trending](https://github.com/eigent-ai/eigent)
 
-### Superpowers: An agentic skills framework & software development methodology
-Superpowers introduces an agentic skills framework and software development methodology designed for coding agents to execute complex tasks effectively. It emphasizes composable "skills" and initial instructions, enabling AI agents to plan and execute development tasks beyond simple code generation. This framework offers a structured approach for engineers building and integrating AI agents into their dev pipelines, promising more autonomous and reliable AI-driven development.
+### obra/superpowers
+Superpowers is an agentic skills framework and software development methodology built for coding agents. It provides a structured workflow where AI agents utilize composable "skills" and initial instructions to tackle complex coding projects systematically. Developers can leverage this framework to build more robust and predictable AI-driven software development processes, making agentic workflows actionable.
 [Source: GitHub Trending](https://github.com/obra/superpowers)
 
-### Handy: A free, open source, and extensible speech-to-text application that works completely offline
-Handy is a free, open-source, and extensible speech-to-text application designed for complete offline operation, built with Tauri. It utilizes local-first AI models to process audio directly on the user's device, ensuring privacy and fast transcription without cloud reliance. Developers can integrate Handy for privacy-sensitive applications or environments with limited connectivity, or extend its functionality to build custom voice-controlled interfaces.
+### cjpais/Handy
+Handy is a free, open-source, and extensible speech-to-text application that operates entirely offline. Built with Tauri, it ensures privacy and local processing for transcription tasks without relying on cloud services. Developers can integrate Handy into projects requiring secure, on-device voice transcription, or contribute to its open-source development to enhance its capabilities.
 [Source: GitHub Trending](https://github.com/cjpais/Handy)
 
-### LangExtract: A Python library for extracting structured information from unstructured text using LLMs
-Google has released LangExtract, a Python library for extracting structured information from unstructured text using LLMs, featuring precise source grounding and interactive visualization. The library focuses on enabling developers to build robust extraction pipelines with explainability, showing exactly where extracted data originated in the source text. This tool provides a powerful solution for tasks like data enrichment, knowledge graph construction, and automating information retrieval from diverse text sources.
+### ultralytics/ultralytics
+Ultralytics continues to advance its YOLO (You Only Look Once) object detection framework, a cornerstone in real-time computer vision. The project consistently releases updates and improvements, focusing on speed, accuracy, and ease of deployment across various hardware. Developers should monitor Ultralytics for the latest advancements in object detection, as it remains a leading tool for integrating performant computer vision into applications.
+[Source: GitHub Trending](https://github.com/ultralytics/ultralytics)
+
+### google/langextract
+Google has released LangExtract, a Python library for precisely extracting structured information from unstructured text using Large Language Models (LLMs). It features robust source grounding to ensure accuracy and offers interactive visualization tools for data validation. Developers working with natural language processing can use LangExtract to build reliable information extraction pipelines and reduce LLM hallucination risks.
 [Source: GitHub Trending](https://github.com/google/langextract)
 
-### AionUi: Free, local, open-source Cowork for Gemini CLI, Claude Code, Codex, Opencode, Qwen Code, Goose Cli, Auggie, and more
-AionUi is an open-source, local-first "Cowork" desktop environment supporting multiple AI CLI agents like Gemini, Claude Code, and Codex. It provides a unified interface for interacting with various coding-focused LLMs directly on your machine, enhancing privacy and reducing latency. Developers gain a versatile platform to experiment with and integrate different AI coding assistants into their local development workflows, fostering faster iteration and control over their data.
+### iOfficeAI/AionUi
+AionUi is a free, local, open-source "Cowork" desktop application supporting various CLI AI agents like Gemini CLI, Claude Code, and Codex. It provides a unified interface for interacting with multiple code-focused LLMs offline, emphasizing privacy and local execution. Developers can use AionUi to consolidate their AI coding assistant workflows locally, enhancing productivity and maintaining data sovereignty.
 [Source: GitHub Trending](https://github.com/iOfficeAI/AionUi)
+
+### agentsmd/agents.md
+AGENTS.md introduces a simple, open format for guiding coding agents, acting as a "README for agents" within a project. This format provides dedicated, predictable context and instructions, enabling AI agents to better understand project requirements and scope. Developers can implement AGENTS.md in their repositories to standardize communication with AI coding assistants, improving their effectiveness and integration into workflows.
+[Source: GitHub Trending](https://github.com/agentsmd/agents.md)
 
 ## 🛡️ DEV & SECURITY
 
 ### Cloudflare Automates Salt Configuration Management Debugging, Reducing Release Delays
-Cloudflare has significantly improved its SaltStack configuration management by redesigning its observability to automate debugging of "grain of sand" configuration errors. This innovation enables Cloudflare's SRE team to rapidly identify and remediate single configuration errors within millions of state applications across their global fleet. This approach offers valuable insights for large-scale infrastructure management, highlighting the importance of deep observability in complex distributed systems to prevent release delays.
+Cloudflare has significantly improved its SaltStack configuration management by redesigning observability for its global fleet. This tackles the "grain of sand" problem, where finding a single configuration error among millions of state applications is critical. SRE teams can adopt similar configuration observability strategies to detect and resolve deployment issues more efficiently, ensuring smoother releases and operational stability.
 [Source: InfoQ](https://www.infoq.com/news/2026/01/cloudflare-salt-configuration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
 
 ### Pulumi Adds Native Support for Terraform and HCL
-Pulumi now natively supports Terraform and HCL, allowing direct execution of HCL configurations and management of Terraform state within Pulumi Cloud. This enhancement facilitates migration from legacy infrastructure-as-code tools and provides a financial incentive with credits for existing HashiCorp contracts. Developers can now unify their infrastructure provisioning workflows, combining existing Terraform assets with Pulumi's programming language-based approach, and simplify cloud resource management.
+Pulumi now offers native support for Terraform and HCL, allowing direct execution and state management of existing Terraform configurations within Pulumi Cloud. This feature, currently in private beta, simplifies migration from legacy Infrastructure as Code (IaC) tools and addresses recent HashiCorp licensing changes. Developers can leverage this to consolidate IaC workflows, integrate existing Terraform assets, and potentially transition to Pulumi with less friction.
 [Source: InfoQ](https://www.infoq.com/news/2026/01/pulumi-adds-terraform-hcl/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
 
+### Cloudflare Introduces Aggregations in R2 SQL for Data Analytics
+Cloudflare's R2 SQL now supports aggregations, expanding its utility beyond basic filtering for data stored in R2. This new capability allows developers to perform analytical queries directly on R2 data without requiring separate data warehouse solutions. Developers can utilize R2 SQL aggregations to simplify their data analytics pipelines, reducing infrastructure complexity and costs for workloads directly on their object storage.
+[Source: InfoQ](https://www.infoq.com/news/2026/01/cloudflare-r2-sql-aggregations/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+
 ### Drone Hacking Part 1: Dumping Firmware and Bruteforcing ECC
-A detailed security research series has begun on drone hacking, with the first part covering firmware dumping and bruteforcing Elliptic Curve Cryptography (ECC) on a specific drone model. This research exposes potential vulnerabilities in drone security protocols, demonstrating methods to extract critical firmware and circumvent cryptographic protections. Developers working on IoT, especially drone platforms, should review their security implementations, particularly firmware encryption and key management, to guard against similar attacks.
+A detailed security research series has begun, with "Part 1" focusing on dumping drone firmware and bruteforcing Elliptic Curve Cryptography (ECC) keys. This initial phase explores methods for extracting proprietary code and compromising cryptographic protections on embedded systems. Hardware and embedded systems developers should review such research to understand evolving attack surfaces and implement more robust security measures against firmware extraction and key cracking.
 [Source: Hacker News](https://neodyme.io/en/blog/drone_hacking_part_1/)
 
-Generated from 178 articles across 6 sources.
+### puckeditor/puck
+Puck is an open-source visual editor specifically designed for React, providing a drag-and-drop interface for building dynamic user interfaces. It aims to streamline UI development by allowing designers and developers to visually compose React components without extensive coding. React developers can integrate Puck into their workflows to accelerate component layout, enable non-technical users to build pages, and enhance design system adoption.
+[Source: GitHub Trending](https://github.com/puckeditor/puck)
+
+Generated from 24 articles across 5 sources.
