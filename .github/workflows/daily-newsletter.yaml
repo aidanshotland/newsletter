@@ -2,7 +2,7 @@ name: Daily Tech Newsletter
 
 on:
   schedule:
-    - cron: '0 15 * * *'  # 7am PST / 8am PDT
+    - cron: '0 15 * * 1-5'  # 7am PST / 8am PDT
   workflow_dispatch:
 
 env:
