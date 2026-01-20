@@ -28,9 +28,9 @@ def get_articles():
     SELECT a.*, 
            (SELECT COUNT(*) FROM articles b 
             WHERE b.title LIKE '%' || SUBSTR(a.title, 1, 15) || '%' 
-            AND date(b.created_at) = date('now')) as frequency
+            AND b.is_read = 0) as frequency
     FROM articles a 
-    WHERE date(a.created_at) = date('now')
+    WHERE a.is_read = 0
     ORDER BY frequency DESC
     """
     cursor.execute(query)
@@ -38,18 +38,21 @@ def get_articles():
     conn.close()
     return rows
 
-def cleanup_articles():
-    """Delete all articles after newsletter is generated"""
-    if not os.path.exists(DB_PATH):
+def mark_as_read(article_ids):
+    """Updates the database to set is_read = 1 for the processed articles."""
+    if not article_ids:
         return
     
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM articles")
-    deleted_count = cursor.rowcount
+    # Using 'IN' to update multiple IDs at once
+    placeholders = ', '.join(['?'] * len(article_ids))
+    query = f"UPDATE articles SET is_read = 1 WHERE id IN ({placeholders})"
+    cursor.execute(query, article_ids)
     conn.commit()
     conn.close()
-    print(f"🧹 Cleaned up {deleted_count} articles from database")
+    print(f"✅ Success: {len(article_ids)} articles marked as read.")
+
 
 def generate_newsletter(articles):
     if not articles:
@@ -116,6 +119,32 @@ def generate_newsletter(articles):
     
     return response.text
 
+def delete_old_articles():
+    if not os.path.exists(DB_PATH):
+        print("❌ Database not found. Nothing to delete.")
+        return
+
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    try:
+        # SQLite uses 'now' and '-3 days' to calculate the cutoff
+        query = "DELETE FROM articles WHERE created_at < DATETIME('now', '-3 days')"
+        cursor.execute(query)
+        
+        deleted_count = cursor.rowcount
+        conn.commit()
+        
+        if deleted_count > 0:
+            print(f"🧹 Cleanup complete: {deleted_count} articles older than 3 days deleted.")
+        else:
+            print("✨ Database is already lean! No articles older than 3 days found.")
+            
+    except sqlite3.Error as e:
+        print(f"❌ An error occurred: {e}")
+    finally:
+        conn.close()
+
 if __name__ == "__main__":
     raw_data = get_articles()
     if raw_data:
@@ -133,7 +162,9 @@ if __name__ == "__main__":
             f.write(report)
         
         print(f"\n✅ Newsletter saved to: {report_path}")
+        article_ids = [a['id'] for a in raw_data]
+        mark_as_read(article_ids)
+        delete_old_articles()
 
-        cleanup_articles()
     else:
         print("Nothing new to report!")

@@ -17,7 +17,7 @@ RSS_FEEDS = {
 
 }
 
-TLDR_CATS = ['tech', 'ai']
+TLDR_CATS = ['tech', 'ai', 'dev']
 
 def get_db_conn():
     return sqlite3.connect('articles.db')

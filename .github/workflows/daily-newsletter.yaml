@@ -1,14 +1,21 @@
 name: Daily Tech Newsletter
-
 on:
   schedule:
-    - cron: '0 15 * * 1-5'  # 7am PST / 8am PDT
+    - cron: '0 15 * * 1-5'  # 7am PST / 8am PDT - Run fetcher + summarizer
+    - cron: '0 5 * * 2-6'   # 10pm PST / 11pm PDT previous day - Run fetcher only
   workflow_dispatch:
+    inputs:
+      job_type:
+        description: 'Job to run'
+        required: false
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - fetch-only
 
 env:
   TZ: America/Los_Angeles
-
-
 
 jobs:
   generate-newsletter:
@@ -36,7 +43,8 @@ jobs:
         run: |
           python fetcher.py
       
-      - name: Run summarizer
+      - name: Run summarizer (morning only)
+        if: github.event.schedule == '0 15 * * 1-5' || (github.event_name == 'workflow_dispatch' && inputs.job_type == 'both')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |

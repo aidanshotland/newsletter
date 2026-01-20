@@ -15,19 +15,20 @@ def rebuild():
     cursor = conn.cursor()
     
     cursor.execute('''
-        CREATE TABLE articles (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            link TEXT UNIQUE,
-            source TEXT,
-            title TEXT,
-            summary TEXT,
-            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-        )
+    CREATE TABLE articles (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        link TEXT UNIQUE,
+        source TEXT,
+        title TEXT,
+        summary TEXT,
+        is_read INTEGER DEFAULT 0,  -- 0 = Unread, 1 = Read
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
     ''')
     
     conn.commit()
     conn.close()
-    print(f"✅ Success! Created a fresh table 'articles' at: {DB_PATH}")
+    print(f"✅ Success! Created a fresh table 'articles' with 'is_read' column at: {DB_PATH}")
 
 if __name__ == "__main__":
     rebuild()
