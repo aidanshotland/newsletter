@@ -35,7 +35,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip3 install feedparser beautifulsoup4 requests python-dotenv google-genai markdown
+          pip3 install feedparser beautifulsoup4 requests python-dotenv google-genai markdown resend
 
       - name: Run fetcher
         env:
