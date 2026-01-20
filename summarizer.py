@@ -165,19 +165,18 @@ def send_email(markdown_content):
       </body>
     </html>
     """
+
     try:
         params = {
-            "from": "Newsletter <onboarding@resend.dev>", # Use your verified domain later
+            "from": "Tech Briefing <onboarding@resend.dev>", 
             "to": [receiver],
-            "subject": f"Tech Briefing: {today}",
-            "text": markdown_content, # Plain text fallback
-            "html": f"<div style='font-family: sans-serif;'>{markdown_content}</div>",
+            "subject": f"🚀 Tech Briefing: {today}",
+            "html": styled_html,
         }
-
-        email = resend.Emails.send(params)
-        print(f"📧 Email sent successfully! ID: {email['id']}")
+        resend.Emails.send(params)
+        print("📧 Email sent as HTML.")
     except Exception as e:
-        print(f"❌ Failed to send email: {e}")
+        print(f"❌ Email error: {e}")
 
 if __name__ == "__main__":
     raw_data = get_articles()
