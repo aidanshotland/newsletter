@@ -5,6 +5,7 @@ from google import genai
 from google.genai import types
 from datetime import datetime
 import resend
+import markdown
 
 # 1. SETUP PATHS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -152,9 +153,18 @@ def send_email(markdown_content):
     receiver = os.getenv("RECEIVER_EMAIL")
     today = datetime.now().strftime('%B %d, %Y')
 
-    # Convert Markdown to a simple HTML structure if needed, 
-    # though Resend handles raw text well, 
-    # wrapping it in a basic div helps with styling.
+    # Convert the Markdown string into HTML
+    html_body = markdown.markdown(markdown_content)
+
+    # Wrap in basic styling to prevent "blob" text and improve readability
+    styled_html = f"""
+    <html>
+      <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+                   line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px;">
+        {html_body}
+      </body>
+    </html>
+    """
     try:
         params = {
             "from": "Newsletter <onboarding@resend.dev>", # Use your verified domain later
