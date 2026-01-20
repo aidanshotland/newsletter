@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 from datetime import datetime
+import resend
 
 # 1. SETUP PATHS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -145,6 +146,29 @@ def delete_old_articles():
     finally:
         conn.close()
 
+
+def send_email(markdown_content):
+    resend.api_key = os.getenv("RESEND_API_KEY")
+    receiver = os.getenv("RECEIVER_EMAIL")
+    today = datetime.now().strftime('%B %d, %Y')
+
+    # Convert Markdown to a simple HTML structure if needed, 
+    # though Resend handles raw text well, 
+    # wrapping it in a basic div helps with styling.
+    try:
+        params = {
+            "from": "Newsletter <onboarding@resend.dev>", # Use your verified domain later
+            "to": [receiver],
+            "subject": f"Tech Briefing: {today}",
+            "text": markdown_content, # Plain text fallback
+            "html": f"<div style='font-family: sans-serif;'>{markdown_content}</div>",
+        }
+
+        email = resend.Emails.send(params)
+        print(f"📧 Email sent successfully! ID: {email['id']}")
+    except Exception as e:
+        print(f"❌ Failed to send email: {e}")
+
 if __name__ == "__main__":
     raw_data = get_articles()
     if raw_data:
@@ -160,6 +184,8 @@ if __name__ == "__main__":
         
         with open(report_path, "w") as f:
             f.write(report)
+        
+        send_email(report)
         
         print(f"\n✅ Newsletter saved to: {report_path}")
         article_ids = [a['id'] for a in raw_data]

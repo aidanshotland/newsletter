@@ -1,14 +1,14 @@
 name: Daily Tech Newsletter
 on:
   schedule:
-    - cron: '0 15 * * 1-5'  # 7am PST / 8am PDT - Run fetcher + summarizer
-    - cron: '0 5 * * 2-6'   # 10pm PST / 11pm PDT previous day - Run fetcher only
+    - cron: "0 15 * * 1-5" # 7am PST / 8am PDT - Run fetcher + summarizer
+    - cron: "0 5 * * 2-6" # 10pm PST / 11pm PDT previous day - Run fetcher only
   workflow_dispatch:
     inputs:
       job_type:
-        description: 'Job to run'
+        description: "Job to run"
         required: false
-        default: 'both'
+        default: "both"
         type: choice
         options:
           - both
@@ -20,36 +20,38 @@ env:
 jobs:
   generate-newsletter:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-      
+          python-version: "3.11"
+
       - name: Install dependencies
         run: |
-          pip3 install feedparser beautifulsoup4 requests python-dotenv google-genai
-      
+          pip3 install feedparser beautifulsoup4 requests python-dotenv google-genai markdown
+
       - name: Run fetcher
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python fetcher.py
-      
+
       - name: Run summarizer (morning only)
         if: github.event.schedule == '0 15 * * 1-5' || (github.event_name == 'workflow_dispatch' && inputs.job_type == 'both')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
         run: |
           python summarizer.py
-      
+
       - name: Commit and push report
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
