@@ -157,10 +157,41 @@ def send_email(markdown_content):
     html_body = markdown.markdown(markdown_content)
 
     # Wrap in basic styling to prevent "blob" text and improve readability
+  # Wrap in styling with larger font and Dark Mode support
     styled_html = f"""
     <html>
+      <head>
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
+        <style>
+          :root {{
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+          }}
+
+          /* Dark Mode specific overrides */
+          @media (prefers-color-scheme: dark) {{
+            body {{
+              background-color: #121212 !important;
+              color: #eeeeee !important;
+            }}
+            h1, h2, h3 {{
+              color: #ffffff !important;
+            }}
+            p, li {{
+              color: #cccccc !important;
+            }}
+          }}
+
+          /* General spacing for readability */
+          h1, h2, h3 {{ margin-top: 24px; }}
+          p, li {{ margin-bottom: 16px; }}
+        </style>
+      </head>
       <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-                   line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 20px;">
+                   line-height: 1.6; color: #333; background-color: #ffffff;
+                   max-width: 600px; margin: auto; padding: 20px; 
+                   font-size: 19px;">
         {html_body}
       </body>
     </html>
