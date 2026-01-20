@@ -1,59 +1,59 @@
 ## 🚨 TOP TRENDS
 
 ### LLMs and your career (3 minute read)
-The increasing usage of Large Language Models (LLMs) is streamlining practical coding tasks, but it is unlikely to displace fundamentally interesting software development jobs. While LLMs excel at generating boilerplate and automating routine tasks, deep expertise in core software engineering principles remains critical. Developers should focus on cultivating a strong understanding of fundamentals to tackle complex problems and build robust systems, leveraging LLMs as powerful tools rather than relying on them exclusively.
+The impact of Large Language Models (LLMs) on software development careers is a frequent topic, emphasizing that fundamental knowledge remains crucial despite AI-driven coding assistance. While LLMs streamline routine coding tasks, deep understanding of software principles is essential for tackling complex problems and designing core systems. Developers should balance leveraging AI for efficiency with continuously cultivating their foundational expertise to stay relevant in an evolving landscape.
 [Source: TLDR_TECH](https://notes.eatonphil.com/2026-01-19-llms-and-your-career.html?utm_source=tldrnewsletter)
 
 ### OpenAI teases hardware unveil this year as Jony Ive's team hires more Apple alumni (1 minute read)
-OpenAI is reportedly preparing to unveil its first hardware product this year, with Jony Ive's design team actively recruiting former Apple talent. This strategic move suggests OpenAI is venturing into physical devices, potentially integrating advanced AI capabilities into new form factors. Developers should watch this space for new platforms and interaction paradigms that could emerge, influencing how AI agents are deployed and consumed in tangible products.
+OpenAI is reportedly planning a hardware unveiling this year, with Jony Ive's design team actively recruiting former Apple talent. This strategic move suggests OpenAI is expanding beyond software into integrated AI devices, aiming to create a seamless hardware-software experience. Developers and product strategists should monitor this shift, as it could signal new platforms and interaction paradigms for AI applications.
 [Source: TLDR_TECH](https://9to5mac.com/2026/01/19/openai-teases-hardware-unveil-this-year-as-jony-ives-team-hires-more-apple-alumni/?utm_source=tldrnewsletter)
 
-### AI Not Ready to Replace Junior Devs Says Ruby on Rails Creator (8 minute read)
-David Heinemeier Hansson, creator of Ruby on Rails, asserts that AI is not yet competent enough to replace junior developers. While AI tools can assist with coding, they lack the nuanced understanding, problem-solving skills, and ability to handle complex, evolving requirements that human junior developers provide. This highlights the continued importance of foundational learning and human oversight in software development, even with advanced AI assistance.
-[Source: TLDR_DEV](https://www.finalroundai.com/blog/ai-can-not-replace-junior-programmers?utm_source=tldrdev)
-
 ### NYSE Builds Venue for 24/7 Trading of Tokenized Stocks, ETFs (5 minute read)
-The New York Stock Exchange is developing a new blockchain-powered digital trading platform to enable round-the-clock trading of tokenized stocks and exchange-traded funds. This initiative leverages blockchain technology to create a more efficient and accessible market infrastructure, aiming for a launch later this year. Developers should explore tokenization standards and blockchain integration patterns as financial markets increasingly adopt distributed ledger technologies for new trading venues.
-[Source: TLDR_TECH](https://www.bloomberg.com/news/articles/2026/01/19/nyse-builds-venue-for-24-7-trading-of-tokenized-stocks-etfs?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc2ODg4MjQwNywiZXhwIjoxNzY5NDg3MjA3LCJhcnRpY2xlSWQiOiJUOTJORlpLSUpIOE0wMCIsImJjb25uZWN0SWQiOiIwOThFNzNDQTE5QTA0RDkxODEyQzQ4MjcwRDZERTI0QiJ9.bGziA6rvWaaOt-oBVOvhNpkhPXQQUyHsKnrVEzYRVEg&utm_source=tldrnewsletter)
+The New York Stock Exchange (NYSE) is developing a new blockchain-based digital trading platform for 24/7 trading of tokenized stocks and exchange-traded funds. This platform aims to leverage blockchain technology to enable continuous market operations, extending trading hours beyond traditional limits. Financial technologists and blockchain developers should recognize this as a significant step towards institutional adoption of tokenized assets and decentralized finance infrastructure.
+[Source: TLDR_TECH](https://www.bloomberg.com/news/articles/2026-01-19/nyse-builds-venue-for-24-7-trading-of-tokenized-stocks-etfs?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc2ODg4MjQwNywiZXhwIjoxNzY5NDg3MjA3LCJhcnRpY2xlSWQiOiJUOTJORlpLSUpIOE0wMCIsImJjb25uZWN0SWQiOiIwOThFNzNDQTE5QTA0RDkxODEyQzQ4MjcwRDZERTI0QiJ9.bGziA6rvWaaOt-oBVOvhNpkhPXhQUyHsKnrVEzYRVEg&utm_source=tldrnewsletter)
+
+### One of the first alternative app stores in the EU is shutting down
+Setapp Mobile, an early alternative app store in the EU, is closing its operations next month, citing Apple's evolving terms for third-party app distribution. This closure highlights the challenges faced by developers attempting to operate alternative app ecosystems under new regulatory frameworks like the Digital Markets Act. Developers should closely follow policy changes and platform guidelines when planning distribution strategies in regulated markets.
+[Source: TechCrunch](https://techcrunch.com/2026/01/20/one-of-the-first-alternative-app-stores-in-the-eu-is-shutting-down/)
 
 ## 🤖 AI INNOVATION
 
+### How CyberArk Protects AI Agents with Instruction Detectors and History-Aware Validation
+CyberArk has developed methods to protect AI agents from malicious instructions embedded in external data, treating all incoming text as untrusted. Their approach uses instruction detection and history-aware validation to guard against both malicious input and contextual attacks. Developers building AI agents must prioritize robust input validation and context management to prevent prompt injection and ensure secure, reliable agent behavior.
+[Source: InfoQ](https://www.infoq.com/news/2026/01/cyberark-agents-defenses/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+
 ### Anthropic announces Claude CoWork
-Anthropic has introduced Claude CoWork, an AI agent designed to revolutionize file management and document processing on macOS through advanced automation. It enhances workflows by organizing files and executing multi-step tasks, though users are advised to maintain backups due to potential issues. Developers can explore CoWork's capabilities for automating desktop operations and integrating AI agents into local productivity environments, being mindful of data integrity.
+Anthropic has launched Claude CoWork, an AI agent designed to revolutionize file management on macOS through advanced automation. This agent enhances document processing, organizes files, and executes multi-step workflows, offering a new level of efficiency for office solutions. Users and developers of agentic applications should explore Claude CoWork's capabilities for automating desktop tasks, while being mindful of data backup needs due to reported issues.
 [Source: InfoQ](https://www.infoq.com/news/2026/01/claude-cowork/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
 
 ### MIT's Recursive Language Models Improve Performance on Long-Context Tasks
-Researchers at MIT's CSAIL developed Recursive Language Models (RLM) to significantly enhance LLM performance on long-context tasks, processing prompts up to 100 times longer than base LLMs. RLMs achieve this by utilizing a programming environment to recursively decompose and process complex inputs. This breakthrough offers a path to more capable AI for tasks requiring extensive contextual understanding, reducing the current limitations of LLM context windows.
+Researchers at MIT's CSAIL have introduced Recursive Language Models (RLM), a technique that significantly improves LLM performance on tasks requiring long contexts. RLMs utilize a programming environment to recursively decompose and process inputs, enabling them to handle prompts up to 100 times longer than standard LLMs. This innovation is critical for developers working on applications requiring extensive contextual understanding, like detailed code analysis or complex document summarization.
 [Source: InfoQ](https://www.infoq.com/news/2026/01/mit-recursive-lm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
 
-### Tracking and Controlling Data Flows at Scale in GenAI: Meta’s Privacy-Aware Infrastructure
-Meta has unveiled its Privacy-Aware Infrastructure (PAI), designed to scale generative AI development while enforcing privacy across intricate data flows. PAI utilizes large-scale lineage tracking, PrivacyLib instrumentation, and runtime policy controls to ensure consistent privacy enforcement for AI workloads like Meta AI glasses. This provides a robust blueprint for managing sensitive data in large-scale AI systems, crucial for compliance and ethical AI development.
-[Source: InfoQ](https://www.infoq.com/news/2026/01/meta-pai-genai-data-flows/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
-
-### Running Claude Code dangerously (safely)
-A new blog post explores methods for safely executing code generated by Claude AI, addressing the inherent risks of running untrusted AI output. The article details techniques and environments to contain potential dangers, such as sandboxing and strict permission controls. Developers integrating AI code generation into their workflows should prioritize secure execution strategies to prevent vulnerabilities and maintain system integrity.
-[Source: Hacker News](https://blog.emilburzo.com/2026/01/running-claude-code-dangerously-safely/)
-
 ### iOfficeAI/AionUi
-AionUi is a free, local, open-source application that acts as a "Cowork" for various CLI AI agents, including Gemini CLI, Claude Code, and Opencode. It provides a unified interface for interacting with multiple AI models directly from your desktop, emphasizing local-first execution. This tool empowers developers to experiment with and leverage different AI agents without relying on cloud services, promoting privacy and customizability in AI-driven workflows.
+AionUi is an open-source, local-first platform designed to co-work with various CLI AI agents, including Gemini CLI, Claude Code, and Opencode. This project offers a free environment for running and managing AI agents locally, enhancing privacy and reducing reliance on cloud services. Developers can leverage AionUi to experiment with and deploy AI agents on their own machines, fostering greater control over data and execution.
 [Source: GitHub Trending](https://github.com/iOfficeAI/AionUi)
 
-### yichuan-w/LEANN
-LEANN offers a RAG (Retrieval-Augmented Generation) application designed for personal devices, boasting 97% storage savings, fast, accurate, and 100% private operation. This project focuses on efficient local-first LLM execution and data privacy by enabling RAG on user data directly on their hardware. Developers looking for efficient and secure private RAG solutions for localized AI applications should explore LEANN for its performance and privacy-centric design.
+### RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device.
+LEANN provides a local-first Retrieval-Augmented Generation (RAG) application with significant storage savings and guaranteed privacy. It achieves 97% storage efficiency by leveraging optimized data structures and local execution, ensuring sensitive data remains on-device. Developers seeking to build private, efficient RAG systems should investigate LEANN for its potential to deliver high performance while drastically cutting storage costs and enhancing data sovereignty.
 [Source: GitHub Trending](https://github.com/yichuan-w/LEANN)
+
+### Anthropic works on Knowledge Bases for Claude Cowork (3 minute read)
+Anthropic is developing Knowledge Bases for Claude CoWork, allowing the AI agent to reference persistent, user-managed repositories of context and incrementally update information. This feature enables Claude to segment and store specific information, providing a more relevant and continuously learning AI experience. Developers building sophisticated AI agents will find these knowledge bases crucial for managing long-term memory, enhancing agent consistency, and enabling complex, multi-session interactions.
+[Source: TLDR_AI](https://www.testingcatalog.com/anthropic-works-on-knowledge-bases-for-claude-cowork/?utm_source=tldrai)
 
 ## 🛡️ DEV & SECURITY
 
 ### Salesforce Migrates 1,000+ EKS Clusters to Karpenter to Improve Scaling Speed and Efficiency
-Salesforce has successfully migrated over 1,000 Amazon Elastic Kubernetes Service (EKS) clusters from Kubernetes Cluster Autoscaler to Karpenter, AWS’s open-source node-provisioning and autoscaling solution. This migration dramatically improved scaling speed and efficiency for their extensive EKS deployments. Developers managing large-scale Kubernetes environments should consider Karpenter for its optimized resource provisioning and cost-saving potential.
+Salesforce has successfully migrated over 1,000 Amazon Elastic Kubernetes Service (EKS) clusters from Kubernetes Cluster Autoscaler to Karpenter, AWS’s open-source node-provisioning solution. This migration dramatically improved scaling speed and efficiency, optimizing resource allocation for their extensive EKS deployments. Developers and platform engineers managing large Kubernetes environments should consider Karpenter for its superior dynamic provisioning capabilities and potential for significant cost and performance improvements.
 [Source: InfoQ](https://www.infoq.com/news/2026/01/salesforce-eks-karpenter/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
 
 ### Prisma 7: Rust-Free Architecture and Performance Gains
-Prisma ORM 7.0 introduces a Rust-free architecture, delivering significant performance enhancements including 3x faster queries and 90% smaller bundles for Node.js projects. This version streamlines artifact management and offers improved developer experience while maintaining support for major databases. Developers using TypeScript-first ORMs should upgrade to Prisma 7 for substantial performance gains and a more efficient build process.
+Prisma ORM 7.0 introduces a Rust-free architecture, delivering up to 3x faster queries, 90% smaller bundle sizes, and an enhanced developer experience for TypeScript-first ORM users. By removing the Rust dependency, Prisma simplifies deployment and reduces package overhead while significantly boosting performance. Developers using Node.js and TypeScript can now achieve greater database query efficiency and smaller application footprints without the complexities of a Rust-based backend.
 [Source: InfoQ](https://www.infoq.com/news/2026/01/prisma-7-performance/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
 
 ### How we made Python's packaging library 3x faster (19 minute read)
-Python developers significantly optimized the core `packaging` library, crucial for tools like `pip`, achieving up to a 5x improvement in some functions and an overall 3x speedup. They targeted slow operations such as reading and parsing version strings, and refactored code for better efficiency. This work directly benefits all Python users by accelerating dependency resolution and package management across the ecosystem, enhancing build and deployment times.
+Developers achieved a 3x speed improvement for Python's core `packaging` library, crucial for tools like `pip` and widely used across the Python ecosystem. Optimizations focused on reducing slow operations, particularly in parsing and reading data, with some functions seeing a 5x speedup. This performance boost is significant for all Python developers, resulting in faster dependency resolution, installation times, and overall development workflow efficiency.
 [Source: TLDR_DEV](https://iscinumpy.dev/post/packaging-faster/?utm_source=tldrdev)
 
-Generated from 83 articles across 8 sources.
+Generated from 103 articles across 9 sources.
