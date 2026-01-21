@@ -4,8 +4,11 @@ from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 from datetime import datetime
-import resend
+from email.mime.multipart import MIMEMultipart # Added this
+from email.mime.text import MIMEText          # Added this
+from dotenv import load_dotenv
 import markdown
+import smtplib
 
 # 1. SETUP PATHS
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -149,8 +152,9 @@ def delete_old_articles():
 
 
 def send_email(markdown_content):
-    resend.api_key = os.getenv("RESEND_API_KEY")
-    receiver = os.getenv("RECEIVER_EMAIL")
+    sender_email = os.getenv("EMAIL_ADDRESS")
+    receiver_email = os.getenv("RECEIVER_EMAIL")
+    password = os.getenv("EMAIL_PASSWORD")
     today = datetime.now().strftime('%B %d, %Y')
 
     # Convert the Markdown string into HTML
@@ -197,17 +201,19 @@ def send_email(markdown_content):
     </html>
     """
 
+    message = MIMEMultipart()
+    message["From"] = f"Tech Briefing <{sender_email}>"
+    message["To"] = receiver_email
+    message["Subject"] = f"🚀 Tech Briefing: {today}"
+    message.attach(MIMEText(styled_html, "html"))
+
     try:
-        params = {
-            "from": "Tech Briefing <onboarding@resend.dev>", 
-            "to": [receiver],
-            "subject": f"🚀 Tech Briefing: {today}",
-            "html": styled_html,
-        }
-        resend.Emails.send(params)
-        print("📧 Email sent as HTML.")
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message.as_string())
+        print("📧 Email sent via Gmail (Clean links!)")
     except Exception as e:
-        print(f"❌ Email error: {e}")
+        print(f"❌ Gmail Error: {e}")
 
 if __name__ == "__main__":
     raw_data = get_articles()
