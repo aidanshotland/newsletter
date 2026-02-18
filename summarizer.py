@@ -73,39 +73,31 @@ def generate_newsletter(articles):
 
     # Reverting to your preferred high-density editor instruction
     config = types.GenerateContentConfig(
-        system_instruction="""You are a Technical Strategist and Lead Editor. Mission: Synthesize raw tech news into a high-density 5-minute briefing (600-900 words). 
+        system_instruction="""You are a Technical Strategist and Lead Editor. Mission: Synthesize raw tech news into a high-density 5-minute briefing. 
 
-         PRIORITY MATRIX (Selection Criteria): 
-    1. 🚨 TOP TRENDS: Include if: Freq >= 2 OR it's a major release from 'Anchor' projects (Meta, OpenAI, Python, Rust, Linux, etc.) OR it's a critical 'Breaking' security vulnerability. 
-    2. 🤖 AI INNOVATION: Focus on autonomous agents, local-first LLM execution, inference speed breakthroughs, and agentic frameworks. 
-    3. 🛡️ DEV & SECURITY: Focus on tools solving developer pain points, performance benchmarks (Rust/Mojo), and research into new attack surfaces. 
-    4. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
+    PRIORITY MATRIX (Selection Criteria): 
+    1. RELEVANCE: Prioritize major releases from 'Anchor' projects (Meta, OpenAI, Python, Rust, Linux, etc.), critical security vulnerabilities, or items appearing with high frequency (>= 2). 
+    2. TECHNICAL FOCUS: Prioritize autonomous agents, local-first LLM execution, inference breakthroughs, performance benchmarks (Rust/Mojo), and new developer attack surfaces. 
+    3. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
 
     OUTPUT CONSTRAINTS: 
-    - 11-13 items total. 
-    - Each item must start with the article title as a ### heading (e.g., ### Article Title Here)
-    - 60-80 words per item (3 tight sentences). 
+    - START with a section titled '## ⚡ Quick Rundown'. This must be exactly 4 sentences summarizing the overarching themes and most critical updates found across the 10 selected stories.
+    - Exactly 10 items total in a single flat list (no category headings). 
+    - Each item must start with the article title as a ### heading (e.g., ### Article Title Here). 
+    - 60-80 words per item (exactly 3 sentences). 
     - Sentence 1: The Fact (What happened?). 
-    - Sentence 2: The Technical Detail (How does it work/Key spec?). 
-    - Sentence 3: The Actionable Insight (Why should a dev care today?).
-    - SOURCING: Every item MUST end with a Markdown link showing the source of the article. The SourceName must be the source column in db: [Source: SourceName](URL)
-
-        STRUCTURE: 
-        ## 🚨 TOP TRENDS 
-        (3-5 items based on Matrix Rule 1) 
-
-        ## 🤖 AI INNOVATION 
-        (4-6 items based on Matrix Rule 2) 
-
-        ## 🛡️ DEV & SECURITY 
-        (3-5 items based on Matrix Rule 3)""", 
-        # Enabling adaptive thinking with your requested budget
+    - Sentence 2: The Technical Detail (The explanation of how it works or its key specification). 
+    - Sentence 3: Extended Context (Further information to round out the technical explanation or broader implications). 
+    - SOURCING: Every item MUST end with a Markdown link: [Source: SourceName](URL).""", 
         thinking_config=types.ThinkingConfig(include_thoughts=True, thinking_budget=2048) 
     )
 
     prompt = f""" 
-    Analyze these {total_count} items. Using the Priority Matrix, select the 12 most consequential stories.  
-    Ensure the 'TOP TRENDS' section prioritizes high-frequency items but doesn't ignore major 'Anchor' releases. 
+    Analyze these {total_count} items and select the 10 most consequential stories based on the Priority Matrix. 
+    
+    Structure your response as follows:
+    1. A 4-sentence summary rundown of the top themes.
+    2. A direct list of the 10 most relevant items (no category headings).
       
     ARTICLES: 
     {context} 
