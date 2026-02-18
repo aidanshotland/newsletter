@@ -77,13 +77,12 @@ def generate_newsletter(articles):
 
     PRIORITY MATRIX (Selection Criteria): 
     1. RELEVANCE: Prioritize major releases from 'Anchor' projects (Meta, OpenAI, Python, Rust, Linux, etc.), critical security vulnerabilities, or items appearing with high frequency (>= 2). 
-    2. TECHNICAL FOCUS: Prioritize autonomous agents, local-first LLM execution, inference breakthroughs, performance benchmarks (Rust/Mojo), and new developer attack surfaces. 
+    2. TECHNICAL FOCUS: Cover the systems and infrastructure powering the AI race, the agent and model shifts redefining how software gets built, and the security threats that emerge when development moves this fast.
     3. REJECT: Marketing fluff, funding news, opinion pieces without code/data, and generic "Top 10" lists. 
 
     OUTPUT CONSTRAINTS: 
-    - START with a section titled '## ⚡ Quick Rundown'. This must be exactly 4 sentences summarizing the overarching themes and most critical updates found across the 10 selected stories.
-    - Exactly 10 items total in a single flat list (no category headings). 
-    - Each item must start with the article title as a ### heading (e.g., ### Article Title Here). 
+    - Exactly 10 items total in a single flat list (no category headings or intro summaries). 
+    - Each item must start with a relevant emoji followed by the article title as a ### heading (e.g., ### 🚀 Article Title Here). 
     - 60-80 words per item (exactly 3 sentences). 
     - Sentence 1: The Fact (What happened?). 
     - Sentence 2: The Technical Detail (The explanation of how it works or its key specification). 
@@ -94,10 +93,7 @@ def generate_newsletter(articles):
 
     prompt = f""" 
     Analyze these {total_count} items and select the 10 most consequential stories based on the Priority Matrix. 
-    
-    Structure your response as follows:
-    1. A 4-sentence summary rundown of the top themes.
-    2. A direct list of the 10 most relevant items (no category headings).
+    Provide a direct list of 10 items. Ensure the emoji is placed BEFORE the title in the heading.
       
     ARTICLES: 
     {context} 
