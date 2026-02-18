@@ -82,7 +82,7 @@ def generate_newsletter(articles):
 
     OUTPUT CONSTRAINTS: 
     - Exactly 10 items total in a single flat list (no category headings or intro summaries). 
-    - Each item must start with a relevant emoji followed by the article title as a ### heading (e.g., ### 🚀 Article Title Here). 
+    - Each item must start with a relevant emoji followed by the article title as a ### heading (e.g., ### [emoji] Article Title Here). 
     - 60-80 words per item (exactly 3 sentences). 
     - Sentence 1: The Fact (What happened?). 
     - Sentence 2: The Technical Detail (The explanation of how it works or its key specification). 
